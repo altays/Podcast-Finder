@@ -1,0 +1,15 @@
+.tile {
+    justify-content: center;
+}
+
+image {
+    max-width: 50%;
+    min-width: 20%;
+}
+
+/* @media screen and (min-width: 769px), print {
+.tile.is-4 {
+    flex: none;
+    width: 28.33333%;
+}
+} */
