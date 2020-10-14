@@ -1,0 +1,20 @@
+
+
+@media all and (min-width: 1024px) {
+    #brand {
+        padding-left:15px;
+    }
+}
+
+#form-row {
+    margin-bottom:0px;
+}
+
+#input-container-row{
+    margin-bottom:0px;
+}
+
+.flex-display{
+    display:flex;
+    justify-content:center
+}
