@@ -1,8 +1,27 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  /* padding: 50px; */
+  /* font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; */
 }
 
 a {
   color: #00B7FF;
+}
+
+@media all and (min-width: 1024px) {
+  #brand {
+      padding-left:15px;
+  }
+}
+
+#form-row {
+  margin-bottom:0px;
+}
+
+#input-container-row{
+  margin-bottom:0px;
+}
+
+.flex-display{
+  display:flex;
+  justify-content:center
 }
