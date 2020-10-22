@@ -7,5 +7,35 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
     meta(name='viewport', content="width=device-width, initial-scale=1.0")
   body
+    nav
+      .nav-wrapper
+        a(href='/').brand-logo#brand Pod Search
+        a(href="#", data-target="mobile-demo").sidenav-trigger
+          i.material-icons menu
+        ul#nav-mobile.right.hide-on-med-and-down
+          li
+            a(href="#") Network Home
+          li
+            a(href="/about") About
+    ul.sidenav#mobile-demo
+      li
+        a(href="#") Network Home
+      li
+        a(href="/about") About
+
     block content
+
+    footer.page-footer
+
+      .container
+        .row
+          .col.s12.m12.l12.xl12.flex-display
+            h5.text-lighten-4 By 
+              a.white-text(href="https://github.com/altays") Alex Taylor with ❤️
+          
+      .footer-copyright
+        .container © 2020 The Scavengers Network
+          a.grey-text.text-lighten-4.right(href="https://https://www.scavengersnetwork.com/") Home
+
     script(type="text/javascript" src="/javascripts/materialize.min.js")
+    script(type="text/javascript" src="/javascripts/script.js")
