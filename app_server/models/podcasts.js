@@ -38,7 +38,7 @@ const podcastSchema = new mongoose.Schema({
         minlength: 1,
         trim: true
     },
-    episdeNumber: { 
+    episodeNumber: { 
         type: Number,
         required: true
     }
