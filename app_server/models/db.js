@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 const dbURI = 'mongodb://localhost/scavpoddatabase'
 const readLine = require('readline')
+const podcasts = require('./podcasts')
 
 mongoose.connect(dbURI, {useUnifiedTopology: true, useNewUrlParser: true})
 
@@ -25,10 +26,12 @@ const gracefulShutdown = (msg, callback) => {
    
 
 if (process.platform === 'win32'){
+    
     const rl = readLine.createInterface ({
         input: process.stdin,
         output: process.stdout
     });
+
     rl.on ('SIGINT', () => {
         process.emit ("SIGINT");
     });
@@ -45,6 +48,7 @@ process.on('SIGINT', () => {
             process.exit(0);
     });
 });
+
    process.on('SIGTERM', () => {
         gracefulShutdown('Heroku app shutdown', () => {
             process.exit(0);
