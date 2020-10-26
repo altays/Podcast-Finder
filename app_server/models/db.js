@@ -1,7 +1,12 @@
 const mongoose = require('mongoose')
-const dbURI = 'mongodb://localhost/scavpoddatabase'
 const readLine = require('readline')
 const podcasts = require('./podcasts')
+
+if (process.env.NODE_ENV === 'production') {
+    const dbURI = process.env.MONGODB_URI;
+} else {
+    const dbURI = 'mongodb://localhost/scavpoddatabase'
+}
 
 mongoose.connect(dbURI, {useUnifiedTopology: true, useNewUrlParser: true})
 
