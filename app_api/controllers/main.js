@@ -1,12 +1,26 @@
 const mongoose = require('mongoose')
 const Pod = mongoose.model('Podcast')
 
-// wip
 const podcastCreate = (req,res) => {
-    res
-    .status(200)
-    .json({"status":"success"})
-    console.log(res)
+    Pod.create({
+        name: req.body.name,
+        episodeTitle: req.body.episodeTitle,
+        titleShort: req.body.titleShort,
+        episodeDescription: req.body.episodeDescription,
+        scavLink: req.body.scavLink,
+        imageURL: req.body.imageURL,
+        episodeNumber: req.body.episodeNumber
+    }, (err,podcast) => {
+        if (err) {
+            res
+                .status(400)
+                .json(err)
+        } else {
+            res
+                .status(200)
+                .json(podcast)
+        }
+    })
 }
 
 const podcastSearchDB = (req,res) => {
