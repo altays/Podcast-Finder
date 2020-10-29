@@ -10,15 +10,21 @@ const podcastCreate = (req,res) => {
 }
 
 const podcastSearchDB = (req,res) => {
-    // need to figure out how to parse through request param
-        // send individual words as delimited by ampersands from the front end
-        // separate out into an array, splitting at ampersands
-        // create a larger regex search -> need to work out a pattern for searching multiple keywords
+    let searchParams = req.params.searchCriteria.split("&")
+    let builtRegexSearch = regexBuilder(searchParams)
+    
+    function regexBuilder(params) {
+        let regString = ""
+        for (let i = 0; i < params.length; i++) {
+            regString += "(?=.*" + params[i] + ")"
+        }
+        return regString + ".*"
+    }
 
-    let regexSearch = new RegExp(req.params.searchCriteria, "i")
+    let regexSearch = new RegExp(builtRegexSearch, "i")
 
     Pod
-        .find({"$or":[{name:regexSearch},{episodeTitle:regexSearch},{episodeDescription:regexSearch}]})
+        .find({"$or":[{name:regexSearch},{episodeTitle:regexSearch},{episodeDescription:regexSearch}]}).limit(6)
         .exec((err, podcast) => {
             if(!podcast) {
                 console.log(podcast)
@@ -35,8 +41,7 @@ const podcastSearchDB = (req,res) => {
             console.log(podcast)
             res
                 .status(200)
-                .json({"status":"success"})
-            
+                .json({"status":"success"})   
         });
 }
 
