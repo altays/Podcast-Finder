@@ -62,24 +62,20 @@ const podcastSearchDB = (req,res) => {
 // return six random podcasts
 const podcastSearchInit = (req,res) => {
     Pod
-        .aggregate([ { $sample: { size: 6 } } ])
+        .aggregate([ { $sample: { size: 12 } } ])
         .exec((err, podcast) => {
             if(!podcast) {
-                console.log(podcast)
                 return res
                     .status(404)
                     .json({"message": "podcasts not found"})
-                    
             } else if (err) {
-                console.log(podcast)
                 return res
                     .status(404)
                     .json(err)
             }
-            console.log(podcast)
             res
                 .status(200)
-                .json({"status":"success"}) 
+                .json(podcast) 
         });
 }
 
