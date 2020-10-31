@@ -6,15 +6,15 @@ if (process.env.NODE_ENV === 'production'){
    apiContext.server = 'https://powerful-sierra-93873.herokuapp.com/'
 }
 
-const index = async function(req, res) {
-   try {
+const index =  function(req, res) {
+   // try {
       let apiURL = apiContext.server + "/api/podcasts/"
       axios.get(apiURL).then(response => {
          renderIndex(req,res,response)
       }) 
-   } catch(error){
+   // } catch(error){
       res.render('error')
-   }
+   // }
 }
 
 const indexSearch = async function(req, res) {
