@@ -10,10 +10,10 @@ const apiContext = {
 
 redirect = function() {
     if (searchBar.value != "") {
-        let url = path+"/search/"+searchBar.value
+        let url = apiContext.server+"/search/"+searchBar.value
         location.href=url
     } else {
-        location.href = path
+        location.href = apiContext.server
     }
 } 
 
