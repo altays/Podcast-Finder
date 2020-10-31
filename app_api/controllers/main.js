@@ -24,7 +24,8 @@ const podcastCreate = (req,res) => {
 }
 
 const podcastSearchDB = (req,res) => {
-    let searchParams = req.params.searchCriteria.split("&")
+    let searchParams = req.params.searchCriteria.split(" ")
+    console.log(searchParams)
     let builtRegexSearch = regexBuilder(searchParams)
     
     function regexBuilder(params) {

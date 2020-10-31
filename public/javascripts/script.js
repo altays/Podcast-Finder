@@ -3,6 +3,7 @@ let submitButton = document.getElementById("submit");
 
 const apiContext = {
     server: 'https://powerful-sierra-93873.herokuapp.com'
+    // server: "http://localhost:3000"
 }
 
 
