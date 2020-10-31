@@ -1,7 +1,7 @@
 let searchBar = document.getElementById("text");
 let submitButton = document.getElementById("submit");
 
-let path = 'https://powerful-sierra-93873.herokuapp.com/' ;
+let path = 'https://powerful-sierra-93873.herokuapp.com' ;
 
 redirect = function() {
     if (searchBar.value != "") {
