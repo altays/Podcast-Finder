@@ -41,21 +41,18 @@ const podcastSearchDB = (req,res) => {
         .find({"$or":[{name:regexSearch},{episodeTitle:regexSearch},{episodeDescription:regexSearch}]}).limit(6)
         .exec((err, podcast) => {
             if(!podcast) {
-                console.log(podcast)
                 return res
                     .status(404)
                     .json({"message": "podcast not found"})
                     
             } else if (err) {
-                console.log(podcast)
                 return res
                     .status(404)
                     .json(err)
             }
-            console.log(podcast)
             res
                 .status(200)
-                .json({"status":"success"})   
+                .json(podcast)
         });
 }
 
