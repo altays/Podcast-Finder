@@ -41,4 +41,9 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+app.on('clientError', (err, socket) => {
+  console.error(err);
+  socket.end('HTTP/1.1 400 Bad Request\r\n\r\n');
+});
+
 module.exports = app;
