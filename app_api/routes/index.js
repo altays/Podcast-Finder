@@ -4,7 +4,7 @@ const ctrlMain = require('../controllers/main')
 
 router
     .route('/podcasts')
-    .post(ctrlMain.podcastCreate)
+    // .post(ctrlMain.podcastCreate)
     .get(ctrlMain.podcastSearchInit)
 
 router
