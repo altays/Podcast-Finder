@@ -1,7 +1,7 @@
 let searchBar = document.getElementById("text");
 let submitButton = document.getElementById("submit");
 let form = document.getElementById("form")
-let closeIcons = document.getElementsByClassName("icon-red")
+let closeIcons = document.getElementsByClassName("icon-black")
 
 const apiContext = {
     server: 'https://powerful-sierra-93873.herokuapp.com'
