@@ -34,3 +34,7 @@ a {
 .icon-black {
   color:black;
 }
+
+i {
+  cursor: pointer;
+}
