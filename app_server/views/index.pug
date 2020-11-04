@@ -21,13 +21,13 @@ block content
             .card-image.waves-effect.waves-block.waves-light
               img.activator(src=podcast.imageURL, alt=`${podcast.name}`)
             .card-content
-              span.card-title.grey-text.text-darken-4.center-align.activator #{podcast.titleShort}
-                i.material-icons.right.activator keyboard_arrow_up
-                i.material-icons.left.icon-black(data-id=`${podcast._id}`) close
+              span.card-title.grey-text.text-darken-4.center-align.activator #{podcast.episodeTitle.slice(0,10) + "..."}
+                i.material-icons.left.activator keyboard_arrow_up
+                i.material-icons.right.icon-black(data-id=`${podcast._id}`) close
             .card-reveal
-              span.card-title.grey-text.text-darken-4.center-align.flow-text #{podcast.episodeTitle}
-                i.material-icons.right keyboard_arrow_down
-                i.material-icons.left.icon-black(data-id=`${podcast._id}`) close
+              span.card-title.grey-text.text-darken-4.center-align.flow-text #{podcast.episodeTitle.slice(0,10) + "..."}
+                i.material-icons.left keyboard_arrow_down
+                i.material-icons.right.icon-black(data-id=`${podcast._id}`) close
               p.left-align 
                 | #{podcast.episodeDescription}
               p.left-align 
