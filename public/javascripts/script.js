@@ -38,9 +38,6 @@ form.addEventListener("submit", function(event){
 
 for (let i = 0; i < closeIcons.length; i++) {
     closeIcons[i].addEventListener("click", function(event){
-        // let id = this.getAttribute("data-id")
-        // console.log(id)
-
         let parentCol = this.parentElement.parentElement.parentElement.parentElement
         let parentRow = parentCol.parentElement
         parentRow.removeChild(parentCol)
