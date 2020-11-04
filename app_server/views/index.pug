@@ -21,11 +21,13 @@ block content
             .card-image.waves-effect.waves-block.waves-light
               img.activator(src=podcast.imageURL, alt=`${podcast.name}`)
             .card-content
-              span.card-title.activator.grey-text.text-darken-4.center-align #{podcast.titleShort}
-                i.material-icons.right more_vert
+              span.card-title.grey-text.text-darken-4.center-align #{podcast.titleShort}
+                i.material-icons.right keyboard_arrow_up
+                i.material-icons.left.icon-red(data-id=`${podcast._id}`) not_interested
             .card-reveal
               span.card-title.grey-text.text-darken-4.center-align.flow-text #{podcast.episodeTitle}
-                i.material-icons.right close
+                i.material-icons.right keyboard_arrow_down
+                i.material-icons.left.icon-red(data-id=`${podcast._id}`) not_interested
               p.left-align 
                 | #{podcast.episodeDescription}
               p.left-align 

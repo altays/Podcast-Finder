@@ -30,3 +30,7 @@ a {
   display:flex;
   justify-content:center
 }
+
+.icon-red {
+  color:red;
+}
