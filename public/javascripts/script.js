@@ -1,4 +1,4 @@
-let searchBar = document.getElementById("text");
+let searchBar = document.getElementById("autocomplete-input");
 let submitButton = document.getElementById("submit");
 let form = document.getElementById("form")
 let closeIcons = document.getElementsByClassName("icon-black")
@@ -8,11 +8,12 @@ const apiContext = {
     // server: "http://localhost:3000"
 }
 
+// reloading page to make API call
 let redirect = function() {
     let url = ""
     if (searchBar.value != "") {
         url = apiContext.server+"/search/"+searchBar.value
-        console.log(url)
+        // console.log(url)
         return location.href=url
         
     } else {
@@ -21,20 +22,27 @@ let redirect = function() {
     }
 } 
 
-let showID = function(value) {
-    var json = JSON.stringify({
-        test: parseInt(value.dataset.id),
-    });
+// initializing autocomplete
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.autocomplete');    
 
-    console.log(json)
-}
+    let autoData = {
+        "Spooky": null,
+        "Minute": null,
+        "Alabaster": null,
+        "Whamjuice":null
+    }
+        
+    let options = { 
+        data: autoData
+    }
 
+    console.log("loaded")
+    var instances = M.Autocomplete.init(elems, options);
+
+});  
 
 submitButton.addEventListener('click',redirect)
-
-form.addEventListener("submit", function(event){
-    event.preventDefault()
-})
 
 for (let i = 0; i < closeIcons.length; i++) {
     closeIcons[i].addEventListener("click", function(event){
@@ -43,3 +51,8 @@ for (let i = 0; i < closeIcons.length; i++) {
         parentRow.removeChild(parentCol)
     })
 }
+
+// preventing Enter key from refreshing page
+form.addEventListener("submit", function(event){
+    event.preventDefault()
+})
