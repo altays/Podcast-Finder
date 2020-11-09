@@ -5,7 +5,7 @@
 
 Looking for your next favorite podcast?
 
-This app allows for users to find a podcast episode based on search term, whether for listeners looking for shows relevant to their interests or podcast hosts looking for relevant episodes to recommend. 
+This app allows for users to find a podcast episode based on search term, whether for listeners looking for shows relevant to their interests or podcast hosts looking for relevant episodes to recommend. The [project that updates the database](https://github.com/altays/ScavDB-Webcrawler) utilizes the MongoDB NodeJS driver and [RSS-To-JSON](https://www.npmjs.com/package/rss-to-json) to parse RSS feeds and create database entries for each episode.
 
 ***
 
