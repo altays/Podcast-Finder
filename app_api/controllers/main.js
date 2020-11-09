@@ -5,7 +5,6 @@ const podcastCreate = (req,res) => {
     Pod.create({
         name: req.body.name,
         episodeTitle: req.body.episodeTitle,
-        titleShort: req.body.titleShort,
         episodeDescription: req.body.episodeDescription,
         scavLink: req.body.scavLink,
         imageURL: req.body.imageURL,
@@ -36,9 +35,8 @@ const podcastSearchDB = (req,res) => {
     }
 
     let regexSearch = new RegExp(builtRegexSearch, "i")
-
     Pod
-        .find({"$or":[{name:regexSearch},{episodeTitle:regexSearch},{episodeDescription:regexSearch}]}).limit(6)
+        .find({"$or":[{name:regexSearch},{episodeTitle:regexSearch},{episodeDescription:regexSearch}]}).limit(12)
         .exec((err, podcast) => {
             if(!podcast) {
                 return res

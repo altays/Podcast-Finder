@@ -13,13 +13,6 @@ const podcastSchema = new mongoose.Schema({
         minlength: 1,
         trim: true
     },
-    titleShort: { 
-        type: String,
-        required: true,
-        minlength: 1,
-        maxlength: 23,
-        trim: true
-    },
     episodeDescription: { 
         type: String,
         required: true,
